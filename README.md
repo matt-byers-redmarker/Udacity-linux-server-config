@@ -1,13 +1,17 @@
 # Udacity-linux-server-config
 
-The aim of this project is to produce a python script which queries a database of news data to answer three key reporting questions: 
-* What are the most popular three articles of all time?
-* Who are the most popular article authors of all time?
-* On which day/s did more than 1% of requests lead to errors?
+This project aims to host a Flask application on a remote server through Amazon Lightsail. The application serves data using a PostgreSQL database, and has been configured to served a sports catalop application as a WSGI app.
 
-## Requirements for setup
+## Server information
 
-This script is run through a Linux-based virtual machine. For this project, you must have Vagrant and Virtualbox set up on your machine. This script also uses python 3.7.4, so python 3 must be installed. To install all of these, follow the instructions in the links below:
+IP Address: 13.236.160.80
+URL: 
+SSH Port: 2200
+SSH Key: 
+
+# Summary of software installed
+
+
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [Virtualbox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
@@ -15,18 +19,13 @@ This script is run through a Linux-based virtual machine. For this project, you 
 
 ## Summary of configurations made
 
-1. Download and install Vagrant, Virtualbox and Python 3.
-2. Download this repository and ensure it has each file mentioned above.
-3. Open a terminal, git bash, or other command line tool.
-4. cd into your directory containing the 'vagrant' folder installed after downloading vagrant.
-5. Launch the virtual machine with `vagrant up`
-6. Finalise launch of the virtual machine with `vagrant ssh`
-7. This will start a new command line instance in your virtual machine. While in here cd into your /vagrant folder.
-8. Move the contents of this repository into your vagrant folder.
-9. Load the database with `psql -d news -f newsdata.sql`
-10. Connect to the database with `\c news`
-11. Create the 'daily_error_rate' VIEW with the create view command in the Views section below.
-11. Run the script with `python news_report.py` to query the database. You should see the output of the script in your terminal.
+### Get your server
+
+I created an account and setup an Ubuntu server through Amazon Lightsail. So I could SSH into 
+
+### Secure your server
+
+I updated all packages by running `sudo apt-get update` followed by `sudo apt-get upgrade`
 
 ## Third party resources used
 
