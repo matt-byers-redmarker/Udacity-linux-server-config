@@ -32,14 +32,23 @@ I then changed the SSH port from 22 to 2200 by changing line 13 in /etc/ssh/sshd
 I then configured by firewall by running the following commands:
 
 `sudo ufw status` = shows status of ufw firewall, made sure it was disabled
+
 `sudo ufw default allow outgoing` = set default to allow outgoing connections
+
 `sudo ufw default deny incoming` = set default to deny incoming connections
+
 `sudo ufw allow ssh` = allow ssh connections
+
 `sudo ufw allow 2200/tcp` = allows access to the SSH port that we configured the Virtual Machine to run on in the previous step
+
 `sudo ufw allow 80`= allows http connections
+
 `sudo ufw allow 123`= allows NTP connections
+
 `sudo ufw show added` = this allowed me to see all the rules I had set to ensure I had the correct setup before enabling the server
+
 `sudo ufw enable` = this command starts the firewall
+
 `sudo ufw status` = ran this command to check that the firewall was running. I saw that the status was 'active' and the rules I had configured were set up
 
 ### Give `grader` access
