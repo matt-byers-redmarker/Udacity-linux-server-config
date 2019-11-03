@@ -10,7 +10,7 @@ URL: http://13.236.160.80:80/
 
 SSH Port: 2200
 
-SSH Key: 
+SSH Key: Pasted in the 'Notes to reviewer' section of submission
 
 ## Summary of software installed
 
