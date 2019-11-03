@@ -118,7 +118,7 @@ $ sudo apt-get install postgresql
 $ sudo nano /etc/postgresql/10/main/pg_hba.conf
 ```
 
-I then switched to my postgres user, and used the 'psql' command to enter my PostgreSQL shell. While in the psql shell I created a new database called 'catalog', create a new user called 'catalog', set the password to 'catalog', and changed the pvivileges of the catalog database to allow all privileges for the catalog user:
+I then switched to my postgres user, and used the 'psql' command to enter my PostgreSQL shell. While in the psql shell I created a new database called 'catalog', create a new user called 'catalog', set the password to 'catalog', and changed the privileges of the catalog database to allow all privileges for the catalog user:
 
 ```
 $ sudo su - postgres
@@ -148,7 +148,7 @@ $ git init
 $ git clone https://github.com/matt-byers-redmarker/catalogue-app-submission.git
 ```
 
-In order for my app to run correctly, I renamed my 'catalogue_application.py' file to '__init__.py'. I also renamed my 'database_setup.py' file to 'models.py' and moved it one directory up into my 'catalog' directory. I also moved my 'lots_of_categories.py' file up one directory. I then changed the 'create_enine' functionality inside my 'models.py', 'init.py', and 'lots_of_categories.py' file 
+In order for my app to run correctly, I renamed my 'catalogue_application.py' file to '__init__.py'. I also renamed my 'database_setup.py' file to 'models.py' and moved it one directory up into my 'catalog' directory. I also moved my 'lots_of_categories.py' file up one directory.
 
 ```
 $ cd /catalogue-app-submission/
@@ -157,6 +157,8 @@ $ mv database_setup.py models.py
 $ mv /var/www/catalog/catalogue_app_submission/models.py ..
 $ mv /var/www/catalog/catalogue_app_submission/lots_of_categories.py ..
 ```
+I then changed the 'create_engine' functionality inside my 'models.py', 'init.py', and 'lots_of_categories.py' to connect the database to my newly created PostreSQL database, by changing the database link to `('postgresql://catalog:catalog@localhost/catalog')`
+
 Next , I created the file '/etc/apache2/sites-available/catalog.conf' with the command `$ sudo nano /etc/apache2/sites-available/catalog.conf` and inserted the following lines:
 
 ```
